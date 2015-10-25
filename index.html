@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+         <script type="text/javascript" src="js/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
+        <script type="text/javascript" src="cordova.js"></script>
+        <title>Rural Road Ram</title>
+        <script>
+        $(document).bind('mobileinit',function(){
+          $.support.cors=true;
+          $.mobile.allowCrossDomainPages = true;
+          $.mobile.selectmenu.prototype.options.nativeMenu=false;
+        });
+        </script>
+    </head>
+    <body>
+   
+    <div data-role="page" id="splash">
+    <div class="splash" >
+      <img src="img/app_splash.png" style="width:100%;"/>
+    </div>
+</div> 
+ <div data-role="page" id="loginPage">
+  <div data-role="header">
+    <h4>Log In
+    <img border="0" src="img/rrrBannersml.png" class="ui-btn-right"  />
+  </h4>
+  </div>
+
+  <div data-role="content" >
+    <H4 style="width:100%;text-align:center;">Welcome</H4>
+    <h4 id="todaysDate" style="width:100%;text-align:center;font-size:10pt;">Today's Date</h4>
+     <label for="userName" style="font-size:11pt;"><strong>User name:</strong></label>
+     <input type="text" id="userName" name="userName" value="" />
+
+     <label for="password" style="font-size:11pt;"><strong>Password:</strong></label>
+     <input type="text" id="password" name="password" value="" />
+
+     <a href="#mainMenu"  data-role="button" data-mini="true">LOGIN</a>
+     <hr>
+     <a href="#initialize"  data-role="button" data-mini="true">Initialize</a> 
+     <hr>
+     <div id="stats" class="ui-grid-a rcorners" >
+     <div id="ssTbl" class="ui-block-a subTxtFntOff" >#No Subwatersheds</div>
+     <div id="usrTbl" class="ui-block-b subTxtFntOff" >#No Users</div>
+     <div id="sitesTbl" class="ui-block-a subTxtFntOff" >#No Sites</div>
+     <div id="historyTbl" class="ui-block-b subTxtFntOff" >#No History Recs</div>
+     <div id="obsTbl" class="ui-block-a subTxtFntOff" >#No Observations</div>
+     <div id="countyTbl" class="ui-block-b subTxtFntOff" >County</div>
+     <div id="internetConn" class="ui-block-a subTxtFntOff" >Internet Connection</div>
+     <div id="groupID" class="ui-block-b subTxtFntOff" >Group ID</div>
+     <div id="lat" class="ui-block-a subTxtFntOff" >Latitude</div>
+     <div id="lng" class="ui-block-b subTxtFntOff" >Longitude</div>
+ 
+     
+ 
+   </div>
+  </div>   
+
+  <div data-role="footer" data-id="main" data-position="fixed">
+    <h5 >&copy;2ndnaturellc.com</h5>
+  </div>
+</div> 
+
+ <div data-role="page" id="mainMenu">
+
+  <div data-role="header">
+    <h4>Main Menu
+    <img border="0" src="img/rrrBannersml.png" class="ui-btn-right"  />
+  </h4>
+  </div>
+
+  <div data-role="content" >
+     <ul data-role="listview" data-inset="true">
+      <li><a href="#subWatershedList" ><h6>SELECT SUBWATERSHED</h6><p>Select sites from subwatersheds</p></a>
+      <li><a href="#selectByMap"><h6>SELECT SITE BY MAP</h6><p>Select a map site for field observations</p></a>
+      <li><a href="#sitesPage"><h6>SELECT SITE FROM LIST</h6><p>Select a site by name</p></a> 
+      <li><a href="#createNewSite"><h6>CREATE NEW SITE</h6><p>Create new site at present location.</p></a> 
+      <li><a href="#syncData"><h6>SYNC DATA TO SERVER</h6><p>Transmit site and field observations to server</p></a> 
+     </ul>
+<hr>
+      <ul data-role="listview" >
+        <li><a href="#testForInternet"><h6>INTERNET TEST</h6><p>Test for Internet connection</p></a>
+        </ul>
+      
+  </div>   
+
+  <div data-role="footer" data-id="main" data-position="fixed">
+    <h5 >&copy;2ndnaturellc.com</h5>
+  </div>
+</div> 
+
+ <div data-role="page" id="subWatershedList">
+  <div data-role="header">
+    <a href="#" data-rel="back">Back</a><h3>Subwatersheds</h3>
+  </div>
+
+  <div data-role="content" >
+    <ul data-role="listview" id="subshedListView">
+      
+
+    </ul>  
+
+
+  </div>   
+</div> 
+<div data-role="page" id="sitesPage">
+  <div data-role="header">
+    <a href="#" data-rel="back">Back</a><h3>Sites</h3>
+  </div>
+
+  <div data-role="content" >
+    <ul data-role="listview" data-filter="true" id="sitesListView">
+      
+
+    </ul>  
+
+
+  </div>   
+</div> 
+
+  <!--
+        <script type="text/javascript" src="js/cordova.js"></script>
+      -->
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile.js"></script>
+
+       
+
+    </body>
+</html>
