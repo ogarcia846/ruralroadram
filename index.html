@@ -87,7 +87,7 @@
       <li><a href="#syncData"><h6>SYNC DATA TO SERVER</h6><p>Transmit site and field observations to server</p></a> 
      </ul>
 <hr>
-      <ul data-role="listview" >
+      <ul data-role="listview" data-inset="true">
         <li><a href="#testForInternet"><h6>INTERNET TEST</h6><p>Test for Internet connection</p></a>
         </ul>
       
@@ -105,8 +105,6 @@
 
   <div data-role="content" >
     <ul data-role="listview" id="subshedListView">
-      
-
     </ul>  
 
 
@@ -114,19 +112,76 @@
 </div> 
 <div data-role="page" id="sitesPage">
   <div data-role="header">
-    <a href="#" data-rel="back">Back</a><h3>Sites</h3>
+    <a href="#" data-rel="back">Back</a><h3 id="siteTitle">Sites</h3>
   </div>
 
-  <div data-role="content" >
-    <ul data-role="listview" data-filter="true" id="sitesListView">
-      
-
-    </ul>  
-
-
+  <div data-role="ui-content" >
+    <ul data-role="listview" data-filter="true" data-inset="true" id="sitesView"></ul>  
   </div>   
 </div> 
 
+<div data-role="page" id="existingSitePage">
+  <div data-role="header">
+
+        <a href="#" data-rel="back">Back</a>
+        <h4>Site
+    <img border="0" src="img/rrrBannersml.png" class="ui-btn-right"  />
+  </h4>
+  </div>
+
+  <div class="ui-grid-a " data-role="ui-content" style="padding:8px;" >
+    <div class="ui-block-a"><strong>Name of Site</strong></div>
+    <div id="xname" class="ui-block-b">None</div>
+    <div class="ui-block-a"><strong>Site Type</strong></div>
+    <div id="xstype" class="ui-block-b">None</div>
+    <div class="ui-block-a"><strong>Watershed</strong></div>
+    <div id="wsName" class="ui-block-b"><bold>None</bold></div>
+    <div class="ui-block-a"><strong>Subwatershed</strong></div>
+    <div id="swsName" class="ui-block-b"><bold>None</bold></div>
+    <div class="ui-block-a"><strong># Observations</strong></div>
+    <div id="numObs" class="ui-block-b"><bold>None</bold></div>
+    <hr>
+    <strong>Site Score History</strong>
+    <div class="ui-grid-c" id="siteHistory" >
+    <div class="ui-block-a oheading"><small>Date</small></div>
+    <div class="ui-block-b oheading"><small>CE Score</small></div>
+    <div class="ui-block-c oheading"><small>EE Score</small></div>
+    <div class="ui-block-d oheading"><small>Ram Score</small></div>
+
+    <div id="ohd1" class="ui-block-a historyWrapper"></div>
+    <div id="ces1" class="ui-block-b historyWrapper"></div>
+    <div id="ees1" class="ui-block-c historyWrapper"></div>
+    <div id="ras1" class="ui-block-d historyWrapper"></div>
+
+    <div id="ohd2" class="ui-block-a historyWrapper"></div>
+    <div id="ces2" class="ui-block-b historyWrapper"></div>
+    <div id="ees2" class="ui-block-c historyWrapper"></div>
+    <div id="ras2" class="ui-block-d historyWrapper"></div>
+
+    <div id="ohd3" class="ui-block-a historyWrapper"></div>
+    <div id="ces3" class="ui-block-b historyWrapper"></div>
+    <div id="ees3" class="ui-block-c historyWrapper"></div>
+    <div id="ras3" class="ui-block-d historyWrapper"></div>
+
+    <div id="ohd4" class="ui-block-a historyWrapper"></div>
+    <div id="ces4" class="ui-block-b historyWrapper"></div>
+    <div id="ees4" class="ui-block-c historyWrapper"></div>
+    <div id="ras4" class="ui-block-d historyWrapper"></div>
+     <div> 
+         <ul data-role="listview" data-inset="true">
+        <li><a href="#createOb"><h6>Create an Observation</h6></a>
+        </ul>  
+  </div>   
+</div> 
+<div data-role="page" id="siteMapPage">
+  <div data-role="header">
+    <a href="#" data-rel="back">Back</a><h3 id="siteTitle">Site Map</h3>
+  </div>
+
+  <div data-role="ui-content" >
+    <P>Map of site
+  </div>   
+</div> 
   <!--
         <script type="text/javascript" src="js/cordova.js"></script>
       -->
